@@ -1,4 +1,15 @@
-class Usuario:
+from django.db import models
+import datetime
+class Usuario(models.Model):
+    class Meta:
+        db_table = "tb_usuario"
+
+    id = models.CharField(max_length=256, primary_key=True, db_column="id_usuario")
+    nome = models.CharField(max_length=256, db_column="nome_usuario")
+    sobrenome = models.CharField(max_length=256, db_column="sobrenome_usuario")
+    email = models.CharField(max_length=256, db_column="email_usuario")
+    senha = models.CharField(max_length=256, db_column="senha_usuario")
+    current_date = models.TimeField(db_column="registro_evento_criacao")
 
     def __init__(self, id, nome, sobrenome, email, senha):
         self.id = id
