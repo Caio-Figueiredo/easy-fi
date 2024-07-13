@@ -5,7 +5,7 @@ class Sub_movimentacao:
         self.data_real_sub_movimentacao = data_real_sub_movimentacao
         self.valor_sub_movimentacao = valor_sub_movimentacao
         self.id_forma_pgto = id_forma_pgto
-        self.id_movimentacao =  id_movimentacao
+        self.id_movimentacao = id_movimentacao
 
 
     #GET
