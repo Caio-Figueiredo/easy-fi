@@ -1,16 +1,16 @@
-from django import django
+from django.db import models
 import FormaPgto
 import Movimentacao
 
 class Sub_movimentacao(models.Model):
     class Metal:
         db_table = "tb_sub_movimentacao"
-    id = 
+    id = models.CharField(max_length=256,db_column = "id_sub_movimentacao", primary_key=True) 
     data_prev_sub_movimentacao = models.DateField(max_length = 256, db_column = "data_prev_sub_movimentacao")
     data_real_sub_movimentacao = models.DateField(max_length = 256, db_column = "data_real_sub_movimentacao")
     valor_sub_movimentacao = models.FloatField(max_length = 256, db_column = "valor_sub_movimentacao")
     id_forma_pgto = models.ForeignKey(FormaPgto, db_column = 256, db_column= "id_forma_pgto")
-    id_movimentacao = models.ForeignKey(Movimentacao, db_column = "id_movimentacao")
+    id_movimentacao = models.ForeignKey(Movimentacao, db_column = "")
 
 
 
