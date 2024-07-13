@@ -1,5 +1,6 @@
 from django.db import models
 import datetime
+
 class FormaPgto(models.Model):
     class Meta:
         db_table = "tb_forma_pgto"

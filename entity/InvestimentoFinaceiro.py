@@ -1,5 +1,5 @@
-import Transacao
 from django.db import models
+import Transacao
 
 class InvestimentoFinanceiro(models.Model):
     class Meta:

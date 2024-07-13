@@ -1,5 +1,5 @@
-import Devedor
 from django.db import models
+import Devedor
 
 class ControleEmprestimo(models.Model):
     class Meta:
