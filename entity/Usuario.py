@@ -7,32 +7,32 @@ class Usuario:
         self.email = email
         self.senha = senha
 
-    def getId(self):
+    def get_id(self):
         return self.id
 
-    def getNome(self):
+    def get_nome(self):
         return self.nome
 
-    def getSobrenome(self):
+    def get_sobrenome(self):
         return self.sobrenome
 
-    def getEmail(self):
+    def get_email(self):
         return self.email
 
-    def getSenha(self):
+    def get_senha(self):
         return self.senha    
 
-    def setId(self, id):
+    def set_id(self, id):
         self.id = id
 
-    def setNome(self, nome):
+    def set_nome(self, nome):
         self.nome = nome
 
-    def setSobrenome(self, sobrenome):
+    def set_sobrenome(self, sobrenome):
         self.sobrenome = sobrenome
 
-    def setEmail(self, email):
+    def set_email(self, email):
         self.email = email
 
-    def setSenha(self, senha):
+    def set_senha(self, senha):
         self.senha = senha
