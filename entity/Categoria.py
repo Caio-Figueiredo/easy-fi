@@ -1,4 +1,11 @@
-class Categoria:
+from django.db import models
+
+class Categoria(models.Model):
+    class Meta:
+        db_table = "tb_categoria"
+
+    id = models.CharField(max_length=256, db_column="id_categoria", primary_key=True)
+    descricao = models.CharField(max_length=50, db_column="desc_categoria")
 
     def __init__(self, id, descricao):
         self.id = id

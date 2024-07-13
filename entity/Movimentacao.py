@@ -1,39 +1,34 @@
-class Transacao:
+from django.db import models
+import Transacao
 
-    def __init__(self, id, descricao, data_transacao, usuario, categoria):
-        self.id = id
-        self.descricao = descricao
-        self.data_transacao = data_transacao
-        self.usuario = usuario
-        self.categoria = categoria
+class Movimentacao(models.Model):
 
-    def set_id(self, id):
+    class Meta:
+        db_table = "tb_categoria"
+
+    id = models.CharField(max_length=256, db_column="id_movimentacao", primary_key=True)
+    num_parc = models.IntegerField(max_length=256, db_column="num_parcela_atual_movimentacao")
+    transacao = models.ForeignKey(Transacao, on_delete=models.CASCADE, db_column="id_transacao")
+
+    def __init__(self, id, num_parc, transacao):
         self.id = id
-    
-    def set_descricao(self, descricao):
-        self.descricao = descricao
-    
-    def set_data_transacao(self, data_transacao):
-        self.data_transacao = data_transacao
-    
-    def set_usuario(self, usuario):
-        self.usuario = usuario
-    
-    def set_categoria(self, categoria):
-        self.categoria = categoria
+        self.num_parc = num_parc
+        self.transacao = transacao
 
     def get_id(self):
         return self.id
-    
-    def get_descricao(self):
-        return self.descricao
-    
-    def get_data_transacao(self):
-        return self.data_transacao
-    
-    def get_usuario(self):
-        return self.usuario
-    
-    def get_categoria(self):
-        return self.categoria
-    
+
+    def get_num_parc(self):
+        return self.num_parc
+
+    def get_transacao(self):
+        return self.transacao
+
+    def set_id(self, id):
+        self.id = id
+
+    def set_num_parc(self, num_parc):
+        self.num_parc = num_parc
+
+    def set_transacao(self, transacao):
+        self.transacao = transacao
