@@ -1,4 +1,14 @@
-class InvestimentoFinanceiro:
+import Transacao
+from django.db import models
+
+class InvestimentoFinanceiro(models.Model):
+    class Meta:
+        db_table = "tb_investimento_financeiro"
+
+    id = models.CharField(max_length=256, primary_key=True, db_column="id_investimento_financeiro")
+    nome_corretora = models.CharField(max_length=256, db_column="nome_corretora_investimento_financeiro")
+    transacao = models.ForeignKey(Transacao, db_column="id_transacao") 
+    
 
     def __init__(self, id, nome_corretora, transacao):
         self.id = id
